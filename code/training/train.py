@@ -106,7 +106,7 @@ print(X_train['admission_type_id'])
 
 clf.fit(X_train, y_train)
 
-run.log("model", clf)
+run.log("model", "Random forest-5")
 
 preds = clf.predict(X_test)
 run.log("accuracy", accuracy_score(y_test, preds))
