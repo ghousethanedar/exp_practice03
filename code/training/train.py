@@ -92,7 +92,7 @@ numerical = ['patient_nbr', 'number_diagnoses', 'time_in_hospital', 'encounter_i
 numeric_transformations = [([f], Pipeline(steps=[
     ('scaler', StandardScaler())])) for f in numerical]
 
-categorical_transformations = [([f], OneHotEncoder()) for f in categorical]
+categorical_transformations = [([f], OneHotEncoder(handle_unknown='ignore', sparse=False)) for f in categorical]
 
 transformations = numeric_transformations + categorical_transformations
 
